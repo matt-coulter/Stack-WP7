@@ -10,6 +10,8 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Runtime.Serialization;
 using System.ComponentModel;
+using System.IO;
+using System.Text;
 
 
 namespace StackWP7.models
@@ -188,6 +190,24 @@ namespace StackWP7.models
                 {
                     _link = value;
                     NotifyPropertyChanged(ref _link);
+                }
+            }
+        }
+
+        private String _body = "body";
+        [DataMember]
+        public String body
+        {
+            get
+            {
+                return _body;
+            }
+            set
+            {
+                if (value != _body)
+                {
+                    _body = value;
+                    NotifyPropertyChanged(ref _body);
                 }
             }
         }

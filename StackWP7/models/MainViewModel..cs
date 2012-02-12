@@ -74,6 +74,20 @@ namespace StackWP7.models
             this.IsDataLoaded = true;
         }
 
+        /// <summary>
+        /// Creates and adds a few ItemViewModel objects into the Items collection.
+        /// </summary>
+        public void LoadQuestion(int id)
+        {
+            WebClient webClient = new SharpGIS.GZipWebClient();
+
+            webClient.DownloadStringCompleted += onQuestionLoaded;
+
+            webClient.DownloadStringAsync(new Uri("http://api.stackoverflow.com/1.1/questions/" + id + "?body=true", UriKind.Absolute));
+
+            this.IsDataLoaded = true;
+        }
+
         public static byte[] StrToByteArray(string str)
         {
             System.Text.UTF8Encoding encoding = new System.Text.UTF8Encoding();
@@ -104,6 +118,37 @@ namespace StackWP7.models
 
                 this.Items.Clear();
                 foreach (QuestionModel question in questions.items)
+                {
+                    this.Items.Add(question);
+                }
+
+            }
+            catch (Exception error)
+            {
+                this.Items.Clear();
+                QuestionModel q = new QuestionModel();
+                q.title = "Error Code 1";
+                q.link = error.Message;
+                this.Items.Add(q);
+            }
+        }
+
+        private void onQuestionLoaded(object sender, DownloadStringCompletedEventArgs e)
+        {
+            MemoryStream ms = new MemoryStream();
+            try
+            {
+                String myStr = e.Result;
+                ms.Write(StrToByteArray(myStr), 0, myStr.Length);
+
+                ms.Position = 0;
+
+                // deserialization
+                QuestionContainer questions = (QuestionContainer)Deserialize(ms, typeof(QuestionContainer));
+                ms.Close();
+
+                this.Items.Clear();
+                foreach (QuestionModel question in questions.questions)
                 {
                     this.Items.Add(question);
                 }

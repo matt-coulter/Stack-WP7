@@ -20,6 +20,7 @@ namespace StackWP7
     public partial class App : Application
     {
         private static MainViewModel viewModel = null;
+        private static QuestionModel currentQuestion = null;
 
         /// <summary>
         /// A static ViewModel used by the views to bind against.
@@ -37,7 +38,28 @@ namespace StackWP7
             }
         }
 
+        /// <summary>
+        /// A static ViewModel used by the views to bind against.
+        /// </summary>
+        /// <returns>The MainViewModel object.</returns>
+        public static QuestionModel CurrentQuestion
+        {
+            get
+            {
+                // Delay creation of the view model until necessary
+                if (currentQuestion == null)
+                    currentQuestion = new QuestionModel();
 
+                return currentQuestion;
+            }
+            set
+            {
+                if (value != currentQuestion)
+                {
+                    currentQuestion = value;
+                }
+            }
+        }
 
         /// <summary>
         /// Provides easy access to the root frame of the Phone Application.

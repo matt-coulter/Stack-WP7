@@ -26,7 +26,6 @@ namespace StackWP7
         [DataMember]
         public int quota_max;
 
-        [DataMember]
         public Boolean has_more;
     }
 }

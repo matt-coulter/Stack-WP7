@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
+using System.Windows.Navigation;
 
 namespace StackWP7
 {
@@ -18,6 +19,17 @@ namespace StackWP7
         public Question()
         {
             InitializeComponent();
+            DataContext = App.ViewModel;
+        }
+
+        // When page is navigated to set data context to selected item in list
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            String query;
+            if (NavigationContext.QueryString.TryGetValue("questionID", out query))
+            {
+                App.ViewModel.LoadQuestion(Convert.ToInt32(query));
+            }
         }
     }
 }

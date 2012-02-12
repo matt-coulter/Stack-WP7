@@ -78,6 +78,7 @@
     <Compile Include="models\ItemViewModel.cs" />
     <Compile Include="models\MainViewModel..cs" />
     <Compile Include="models\OwnerModel.cs" />
+    <Compile Include="models\QuestionContainer.cs" />
     <Compile Include="models\QuestionModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Question.xaml.cs">
