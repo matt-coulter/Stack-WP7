@@ -125,6 +125,9 @@
     <DesignData Include="SampleData\MainViewModelSampleData1.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
     </DesignData>
+    <DesignData Include="SampleData\QuestionModelSampleData.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </DesignData>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />

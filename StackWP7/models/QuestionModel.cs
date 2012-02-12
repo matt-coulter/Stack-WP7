@@ -51,8 +51,24 @@ namespace StackWP7.models
             }
         }
 
+        private string[] _tags = { "tags" };
+
         [DataMember]
-        public String[] tags;
+        public String[] tags
+        {
+            get
+            {
+                return _tags;
+            }
+            set
+            {
+                if (value != _tags)
+                {
+                    _tags = value;
+                    NotifyArrayChanged(ref _tags);
+                }
+            }
+        }
 
         [DataMember]
         public int view_count;
@@ -88,5 +104,13 @@ namespace StackWP7.models
             propertyName = HttpUtility.HtmlDecode(propertyName);
         }
 
+
+        private void NotifyArrayChanged(ref String[] propertyName)
+        {
+            for (int i = 0; i < propertyName.Length; i++)
+            {
+                propertyName[i] = HttpUtility.HtmlDecode(propertyName[i]);
+            }
+        }
     }
 }

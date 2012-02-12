@@ -30,7 +30,7 @@
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
         	<Button Content="Search" Margin="0,171,0,0" HorizontalAlignment="Right" VerticalAlignment="Top" Click="Button_Click"/>
-        	<TextBox Name="SearchQuery" Text="Search Questions..." Margin="0,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" d:LayoutOverrides="Width"/>
+        	<TextBox KeyDown="SearchQuery_KeyDown" Name="SearchQuery" Margin="0,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" d:LayoutOverrides="Width"/>
         </Grid>
     </Grid>
  

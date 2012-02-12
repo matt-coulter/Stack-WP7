@@ -10,30 +10,45 @@
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
-    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
-    shell:SystemTray.IsVisible="True" Loaded="PhoneApplicationPage_Loaded">
+    mc:Ignorable="d" d:DesignHeight="800" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="False" Loaded="PhoneApplicationPage_Loaded">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot" Background="Transparent" d:DataContext="{d:DesignData /SampleData/MainViewModelSampleData1.xaml}">
+    <Grid x:Name="LayoutRoot" Background="White" d:DataContext="{d:DesignData /SampleData/MainViewModelSampleData1.xaml}">
         <Grid.RowDefinitions>
-            <RowDefinition Height="135"/>
-            <RowDefinition Height="26"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="116"/>
+            <RowDefinition Height="11"/>
+            <RowDefinition Height="641*"/>
         </Grid.RowDefinitions>
 
         <!--TitlePanel contains the name of the application and page title-->
-        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,2">
-            <TextBlock x:Name="ApplicationTitle" Text="Stack WP7" Style="{StaticResource PhoneTextNormalStyle}" FontSize="20"/>
-            <TextBlock x:Name="PageTitle" Text="Results" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        <StackPanel x:Name="TitlePanel" Margin="12,17,0,19">
+            <TextBlock x:Name="PageTitle" Text="Results" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" Foreground="Black"/>
         </StackPanel>
 
         <Grid x:Name="ContentPanel" Grid.Row="2" Margin="12,0,12,0">
-            <ListBox x:Name="MainListBox" ItemsSource="{Binding Items}" DataContext="{Binding}" HorizontalAlignment="Left" Width="468" FontSize="16">
+            <ListBox x:Name="MainListBox" ItemsSource="{Binding Items}" DataContext="{Binding}" HorizontalAlignment="Left" Width="468" FontSize="16"> 
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel Margin="0,0,0,17" Width="432">
-                            <TextBlock Text="{Binding title}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
-                            <TextBlock Text="{Binding link}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                        <StackPanel Margin="0,0,0,17" Background="Gainsboro" Width="468">
+                            <TextBlock Text="{Binding title}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" FontSize="35" Foreground="#333" Margin="10,5,15,30"/>
+                            <TextBlock Margin="10,0,20,0" Foreground="#777" Text="Tags" />
+                            <ListBox ItemsSource="{Binding tags}" Margin="0,0,0,10" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                                <ListBox.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <!-- Could be a VirtualizingStackPanel if you wish -->
+                                        <StackPanel Orientation="Horizontal">
+                                        </StackPanel>
+                                    </ItemsPanelTemplate>
+                                </ListBox.ItemsPanel>
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel>
+                                            <TextBlock Margin="10,0,20,0" Foreground="#777" Text="{Binding}" />
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
                         </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
@@ -53,4 +68,5 @@
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>-->
 
+    
 </phone:PhoneApplicationPage>

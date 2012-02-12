@@ -1,14 +1,88 @@
-<StackWP7_models:MainViewModel xmlns:StackWP7_models="clr-namespace:StackWP7.models" IsDataLoaded="True" SampleProperty="Sem adipiscing">
+<StackWP7_models:MainViewModel xmlns:StackWP7_models="clr-namespace:StackWP7.models"xmlns:System="clr-namespace:System;assembly=mscorlib" IsDataLoaded="True" SampleProperty="Sem adipiscing">
 	<StackWP7_models:MainViewModel.Items>
-		<StackWP7_models:QuestionModel link="Aenean nam cras maecenas" title="Mauris class curabitur duis"/>
-		<StackWP7_models:QuestionModel link="Curae sed nullam praesent" title="Vestibulum accumsan"/>
-		<StackWP7_models:QuestionModel link="Adipiscing donec etiam" title="Aliquam parturient bibendum"/>
-		<StackWP7_models:QuestionModel link="Dictumst vestibulum dis" title="Vestibulum est"/>
-		<StackWP7_models:QuestionModel link="Aptent nunc fusce hac adipiscing" title="Amet phasellus consequat convallis"/>
-		<StackWP7_models:QuestionModel link="Eleifend dignissim" title="Ante lorem auctor elementum leo"/>
-		<StackWP7_models:QuestionModel link="Facilisi mus faucibus morbi facilisis" title="Nec integer"/>
-		<StackWP7_models:QuestionModel link="Fermentum arcu" title="Fringilla quisque non nulla"/>
-		<StackWP7_models:QuestionModel link="Proin congue" title="Per augue habitant parturient diam"/>
-		<StackWP7_models:QuestionModel link="Cursus sed dictum vestibulum inceptos" title="Habitasse eget vestibulum elit"/>
+        <StackWP7_models:QuestionModel link="Aenean nam cras maecenas" title="HTML5 Is there a point?">
+            <StackWP7_models:QuestionModel.tags>
+                <System:String>HTML</System:String>
+                <System:String>IE</System:String>
+                <System:String>CSS3</System:String>
+                <System:String>Amet maecenas</System:String>
+                <System:String>Parturient aptent</System:String>
+                <System:String>Phasellus vestibulum aliquam donec integer</System:String>
+                <System:String>Consequat vestibulum convallis quisque auctor</System:String>
+                <System:String>Vivamus aliquam adipiscing</System:String>
+                <System:String>Ante etiam praesent</System:String>
+                <System:String>Fusce congue arcu</System:String>
+            </StackWP7_models:QuestionModel.tags>
+        </StackWP7_models:QuestionModel>
+        <StackWP7_models:QuestionModel link="Curae sed nullam praesent" title="Vestibulum accumsan">
+            <StackWP7_models:QuestionModel.tags>
+                <System:String>Vestibulum cras</System:String>
+                <System:String>Duis curabitur adipiscing</System:String>
+                <System:String>Class curae nullam sed nunc</System:String>
+                <System:String>Amet maecenas</System:String>
+                <System:String>Parturient aptent</System:String>
+                <System:String>Phasellus vestibulum aliquam donec integer</System:String>
+                <System:String>Consequat vestibulum convallis quisque auctor</System:String>
+                <System:String>Vivamus aliquam adipiscing</System:String>
+                <System:String>Ante etiam praesent</System:String>
+                <System:String>Fusce congue arcu</System:String>
+            </StackWP7_models:QuestionModel.tags>
+        </StackWP7_models:QuestionModel>
+        <StackWP7_models:QuestionModel link="Adipiscing donec etiam" title="Aliquam parturient bibendum">
+            <StackWP7_models:QuestionModel.tags>
+                <System:String>Vestibulum cras</System:String>
+                <System:String>Duis curabitur adipiscing</System:String>
+                <System:String>Class curae nullam sed nunc</System:String>
+                <System:String>Amet maecenas</System:String>
+                <System:String>Parturient aptent</System:String>
+                <System:String>Phasellus vestibulum aliquam donec integer</System:String>
+                <System:String>Consequat vestibulum convallis quisque auctor</System:String>
+                <System:String>Vivamus aliquam adipiscing</System:String>
+                <System:String>Ante etiam praesent</System:String>
+                <System:String>Fusce congue arcu</System:String>
+            </StackWP7_models:QuestionModel.tags>
+        </StackWP7_models:QuestionModel>
+        <StackWP7_models:QuestionModel link="Dictumst vestibulum dis" title="Vestibulum est">
+            <StackWP7_models:QuestionModel.tags>
+                <System:String>Vestibulum cras</System:String>
+                <System:String>Duis curabitur adipiscing</System:String>
+                <System:String>Class curae nullam sed nunc</System:String>
+                <System:String>Amet maecenas</System:String>
+                <System:String>Parturient aptent</System:String>
+                <System:String>Phasellus vestibulum aliquam donec integer</System:String>
+                <System:String>Consequat vestibulum convallis quisque auctor</System:String>
+                <System:String>Vivamus aliquam adipiscing</System:String>
+                <System:String>Ante etiam praesent</System:String>
+                <System:String>Fusce congue arcu</System:String>
+            </StackWP7_models:QuestionModel.tags>
+        </StackWP7_models:QuestionModel>
+        <StackWP7_models:QuestionModel link="Aptent nunc fusce hac adipiscing" title="Amet phasellus consequat convallis">
+            <StackWP7_models:QuestionModel.tags>
+                <System:String>Vestibulum cras</System:String>
+                <System:String>Duis curabitur adipiscing</System:String>
+                <System:String>Class curae nullam sed nunc</System:String>
+                <System:String>Amet maecenas</System:String>
+                <System:String>Parturient aptent</System:String>
+                <System:String>Phasellus vestibulum aliquam donec integer</System:String>
+                <System:String>Consequat vestibulum convallis quisque auctor</System:String>
+                <System:String>Vivamus aliquam adipiscing</System:String>
+                <System:String>Ante etiam praesent</System:String>
+                <System:String>Fusce congue arcu</System:String>
+            </StackWP7_models:QuestionModel.tags>
+        </StackWP7_models:QuestionModel>
+        <StackWP7_models:QuestionModel link="Eleifend dignissim" title="Ante lorem auctor elementum leo">
+            <StackWP7_models:QuestionModel.tags>
+                <System:String>Vestibulum cras</System:String>
+                <System:String>Duis curabitur adipiscing</System:String>
+                <System:String>Class curae nullam sed nunc</System:String>
+                <System:String>Amet maecenas</System:String>
+                <System:String>Parturient aptent</System:String>
+                <System:String>Phasellus vestibulum aliquam donec integer</System:String>
+                <System:String>Consequat vestibulum convallis quisque auctor</System:String>
+                <System:String>Vivamus aliquam adipiscing</System:String>
+                <System:String>Ante etiam praesent</System:String>
+                <System:String>Fusce congue arcu</System:String>
+            </StackWP7_models:QuestionModel.tags>
+        </StackWP7_models:QuestionModel>
 	</StackWP7_models:MainViewModel.Items>
 </StackWP7_models:MainViewModel>

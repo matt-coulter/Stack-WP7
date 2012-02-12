@@ -23,10 +23,24 @@ namespace StackWP7
             DataContext = App.ViewModel;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void callQuery()
         {
             // Navigate to the new page
             NavigationService.Navigate(new Uri("/Results.xaml?query=" + SearchQuery.Text, UriKind.Relative));
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            callQuery();
+        }
+
+        private void SearchQuery_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                callQuery();
+            }
+        }
+     
     }
 }
