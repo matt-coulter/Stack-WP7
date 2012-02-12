@@ -31,12 +31,15 @@
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Margin="0,0,0,17" Background="Gainsboro" Width="468">
-                            <TextBlock Text="{Binding title}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" FontSize="35" Foreground="#333" Margin="10,5,15,30"/>
+                            <TextBlock Text="{Binding title}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" FontSize="35" Foreground="#333" Margin="10,5,15,20"/>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Margin="10,0,10,10" Foreground="#444" FontSize="20">Answers :</TextBlock>
+                                <TextBlock Text="{Binding answer_count}" Foreground="#444" FontSize="20"></TextBlock>
+                            </StackPanel>
                             <TextBlock Margin="10,0,20,0" Foreground="#777" Text="Tags" />
                             <ListBox ItemsSource="{Binding tags}" Margin="0,0,0,10" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Disabled">
                                 <ListBox.ItemsPanel>
                                     <ItemsPanelTemplate>
-                                        <!-- Could be a VirtualizingStackPanel if you wish -->
                                         <StackPanel Orientation="Horizontal">
                                         </StackPanel>
                                     </ItemsPanelTemplate>

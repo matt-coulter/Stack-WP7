@@ -17,20 +17,90 @@ namespace StackWP7.models
     [DataContract]
     public class QuestionModel : INotifyPropertyChanged
     {
+        private int _question_id = 0;
         [DataMember]
-        public int question_id;
+        public int question_id
+        {
+            get
+            {
+                return _question_id;
+            }
+            set
+            {
+                if (value != _question_id)
+                {
+                    _question_id = value;
+                }
+            }
+        }
 
+        private int _creation_date = 0;
         [DataMember]
-        public int creation_date;
+        public int creation_date
+        {
+            get
+            {
+                return _creation_date;
+            }
+            set
+            {
+                if (value != _creation_date)
+                {
+                    _creation_date = value;
+                }
+            }
+        }
 
+        private int _last_activity_date = 0;
         [DataMember]
-        public int last_activity_date;
+        public int last_activity_date
+        {
+            get
+            {
+                return _last_activity_date;
+            }
+            set
+            {
+                if (value != _last_activity_date)
+                {
+                    _last_activity_date = value;
+                }
+            }
+        }
 
+        private int _score = 0;
         [DataMember]
-        public int score;
+        public int score
+        {
+            get
+            {
+                return _score;
+            }
+            set
+            {
+                if (value != _score)
+                {
+                    _score = value;
+                }
+            }
+        }
 
+        private int _answer_count = 0;
         [DataMember]
-        public int answer_count;
+        public int answer_count
+        {
+            get
+            {
+                return _answer_count;
+            }
+            set
+            {
+                if (value != _answer_count)
+                {
+                    _answer_count = value;
+                }
+            }
+        }
 
         private string _title = "title";
 
@@ -70,14 +140,41 @@ namespace StackWP7.models
             }
         }
 
+        private int _view_count = 0;
         [DataMember]
-        public int view_count;
+        public int view_count
+        {
+            get
+            {
+                return _view_count;
+            }
+            set
+            {
+                if (value != _view_count)
+                {
+                    _view_count = value;
+                }
+            }
+        }
 
+        private OwnerModel _owner;
         [DataMember]
-        public OwnerModel owner;
+        public OwnerModel owner
+        {
+            get
+            {
+                return _owner;
+            }
+            set
+            {
+                if (value != _owner)
+                {
+                    _owner = value;
+                }
+            }
+        }
 
         private string _link = "link";
-
         [DataMember]
         public String link
         {
@@ -95,8 +192,22 @@ namespace StackWP7.models
             }
         }
 
+        private Boolean _is_answered;
         [DataMember]
-        public Boolean is_answered;
+        public Boolean is_answered
+        {
+            get
+            {
+                return _is_answered;
+            }
+            set
+            {
+                if (value != _is_answered)
+                {
+                    _is_answered = value;
+                }
+            }
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
         private void NotifyPropertyChanged(ref String propertyName)
