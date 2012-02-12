@@ -16,24 +16,52 @@ namespace StackWP7.models
     public class OwnerModel
     {
         [DataMember]
-        public int user_id;
+        public int user_id
+        {
+            get;
+            set;
+        }
 
         [DataMember]
-        public String display_name;
+        public String display_name
+        {
+            get;
+            set;
+        }
 
         [DataMember]
-        public int reputation;
+        public int reputation
+        {
+            get;
+            set;
+        }
 
         [DataMember]
-        public String user_type;
+        public String user_type
+        {
+            get;
+            set;
+        }
 
         [DataMember]
-        public String profile_image;
+        public String profile_image
+        {
+            get;
+            set;
+        }
 
         [DataMember]
-        public String link;
+        public String link
+        {
+            get;
+            set;
+        }
 
         [DataMember]
-        public int accept_rate;
+        public int accept_rate
+        {
+            get;
+            set;
+        }
     }
 }

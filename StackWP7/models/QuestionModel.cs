@@ -15,7 +15,7 @@ using System.ComponentModel;
 namespace StackWP7.models
 {
     [DataContract]
-    public class QuestionModel : INotifyPropertyChanged
+    public class QuestionModel
     {
         private int _question_id = 0;
         [DataMember]
@@ -209,7 +209,6 @@ namespace StackWP7.models
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
         private void NotifyPropertyChanged(ref String propertyName)
         {
             propertyName = HttpUtility.HtmlDecode(propertyName);
