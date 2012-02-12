@@ -1,0 +1,4 @@
+StackWP7/obj/*
+!StackWP7/obj/.gitkeep
+StackWP7/Bin/*
+!StackWP7/Bin/.gitkeep

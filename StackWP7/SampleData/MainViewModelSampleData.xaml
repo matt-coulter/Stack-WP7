@@ -1,0 +1,14 @@
+﻿<local:MainViewModel 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"       
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:StackWP7.models" 
+    SampleProperty="Sample Text Property Value">
+    
+    <local:MainViewModel.Items>
+        <local:QuestionModel title="design one" link="Maecenas praesent accumsan bibendum"/>
+        <local:QuestionModel title="design one" link="Maecenas praesent accumsan bibendum"/>
+        <local:QuestionModel title="design one" link="Maecenas praesent accumsan bibendum"/>
+        <local:QuestionModel title="design one" link="Maecenas praesent accumsan bibendum"/>
+    </local:MainViewModel.Items>
+    
+</local:MainViewModel>
