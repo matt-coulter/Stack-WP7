@@ -104,7 +104,7 @@ namespace StackWP7.models
             }
         }
 
-        private string _title = "title";
+        private string _title = "";
 
         [DataMember]
         public String title
@@ -123,7 +123,7 @@ namespace StackWP7.models
             }
         }
 
-        private string[] _tags = { "tags" };
+        private string[] _tags = { "" };
 
         [DataMember]
         public String[] tags
@@ -176,7 +176,7 @@ namespace StackWP7.models
             }
         }
 
-        private string _link = "link";
+        private string _link = "";
         [DataMember]
         public String link
         {
@@ -194,7 +194,7 @@ namespace StackWP7.models
             }
         }
 
-        private String _body = "body";
+        private String _body = "";
         [DataMember]
         public String body
         {

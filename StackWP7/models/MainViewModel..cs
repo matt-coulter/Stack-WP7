@@ -121,7 +121,12 @@ namespace StackWP7.models
                 {
                     this.Items.Add(question);
                 }
-
+                if (Items.Count == 0)
+                {
+                    QuestionModel q = new QuestionModel();
+                    q.title = "No Results Found";
+                    this.Items.Add(q);
+                }
             }
             catch (Exception error)
             {
@@ -151,6 +156,12 @@ namespace StackWP7.models
                 foreach (QuestionModel question in questions.questions)
                 {
                     this.Items.Add(question);
+                }
+                if (Items.Count == 0)
+                {
+                    QuestionModel q = new QuestionModel();
+                    q.title = "No Results Found";
+                    this.Items.Add(q);
                 }
 
             }

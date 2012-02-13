@@ -51,8 +51,9 @@ namespace StackWP7
             // If selected index is -1 (no selection) do nothing
             if (MainListBox.SelectedIndex == -1)
                 return;
-            App.CurrentQuestion = (QuestionModel)MainListBox.SelectedItem;
-            NavigationService.Navigate(new Uri("/Question.xaml?questionID=" + ((QuestionModel)MainListBox.SelectedItem).question_id, UriKind.Relative));
+            var questionID = ((QuestionModel)MainListBox.SelectedItem).question_id;
+            if (questionID > 0)
+                NavigationService.Navigate(new Uri("/Question.xaml?questionID=" + questionID, UriKind.Relative));
             // Reset selected index to -1 (no selection)
             MainListBox.SelectedIndex = -1;
         }
