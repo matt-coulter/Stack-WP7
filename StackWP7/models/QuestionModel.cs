@@ -12,6 +12,7 @@ using System.Runtime.Serialization;
 using System.ComponentModel;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 
 
 namespace StackWP7.models
@@ -194,6 +195,11 @@ namespace StackWP7.models
             }
         }
 
+        public string Strip(string text) 
+        {
+            return Regex.Replace(text, "<(.|\n)+?>", string.Empty);
+        }
+
         private String _body = "";
         [DataMember]
         public String body
@@ -206,7 +212,7 @@ namespace StackWP7.models
             {
                 if (value != _body)
                 {
-                    _body = value;
+                    _body = Strip(value);
                     NotifyPropertyChanged(ref _body);
                 }
             }

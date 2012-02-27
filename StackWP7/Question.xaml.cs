@@ -31,5 +31,10 @@ namespace StackWP7
                 App.ViewModel.LoadQuestion(Convert.ToInt32(query));
             }
         }
+
+        private void StackPanel_BindingValidationError(object sender, ValidationErrorEventArgs e)
+        {
+
+        }
     }
 }

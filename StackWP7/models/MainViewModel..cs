@@ -24,12 +24,16 @@ namespace StackWP7.models
         public MainViewModel()
         {
             this.Items = new ObservableCollection<QuestionModel>();
+            this.Items2 = new ObservableCollection<FullQuestionModel>();
+            this.answers = new ObservableCollection<AnswerModel>();
         }
 
         /// <summary>
         /// A collection for ItemViewModel objects.
         /// </summary>
         public ObservableCollection<QuestionModel> Items { get; private set; }
+        public ObservableCollection<FullQuestionModel> Items2 { get; private set; }
+        public ObservableCollection<AnswerModel> answers { get; private set; }
 
         private string _sampleProperty = "Sample Runtime Property Value";
         /// <summary>
@@ -83,7 +87,7 @@ namespace StackWP7.models
 
             webClient.DownloadStringCompleted += onQuestionLoaded;
 
-            webClient.DownloadStringAsync(new Uri("http://api.stackoverflow.com/1.1/questions/" + id + "?body=true", UriKind.Absolute));
+            webClient.DownloadStringAsync(new Uri("http://api.stackoverflow.com/1.1/questions/" + id + "?body=true&answers=true", UriKind.Absolute));
 
             this.IsDataLoaded = true;
         }
@@ -149,29 +153,34 @@ namespace StackWP7.models
                 ms.Position = 0;
 
                 // deserialization
-                QuestionContainer questions = (QuestionContainer)Deserialize(ms, typeof(QuestionContainer));
+                QuestionWrapper questions = (QuestionWrapper)Deserialize(ms, typeof(QuestionWrapper));
                 ms.Close();
 
-                this.Items.Clear();
-                foreach (QuestionModel question in questions.questions)
+                this.Items2.Clear();
+                foreach (FullQuestionModel question in questions.questions)
                 {
-                    this.Items.Add(question);
+                    this.Items2.Add(question);
+                    this.answers.Clear();
+                    foreach (AnswerModel answer in question.answers)
+                    {
+                        this.answers.Add(answer);
+                    }
                 }
-                if (Items.Count == 0)
+                if (Items2.Count == 0)
                 {
-                    QuestionModel q = new QuestionModel();
+                    FullQuestionModel q = new FullQuestionModel();
                     q.title = "No Results Found";
-                    this.Items.Add(q);
+                    this.Items2.Add(q);
                 }
 
             }
             catch (Exception error)
             {
-                this.Items.Clear();
-                QuestionModel q = new QuestionModel();
+                this.Items2.Clear();
+                FullQuestionModel q = new FullQuestionModel();
                 q.title = "Error Code 1";
-                q.link = error.Message;
-                this.Items.Add(q);
+                q.body = error.Message;
+                this.Items2.Add(q);
             }
         }
 
